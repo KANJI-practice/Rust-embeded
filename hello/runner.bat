@@ -1,3 +1,4 @@
+@echo off
 
 set "f=%1"
 call set "f=%%f:\=/%%"
@@ -6,9 +7,6 @@ call set "f=%%f:C:=%%"
 set "d=%CARGO_MANIFEST_DIR%"
 call set "d=%%d\=/%%"
 call set "d=%%d:C%%"
-
-set "a = C:\\work\\embeded\\hello"
-@REM #%usr/local/bin/%
 
 docker run --rm -v %CARGO_MANIFEST_DIR%:/%d% ^
     qemu ^
